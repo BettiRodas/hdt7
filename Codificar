@@ -1,0 +1,16 @@
+import java.util.Set;
+
+public  class Codificar{
+	public  void separoLetras(String mensaje){
+		
+
+	}
+	 private static String PruebaisNumber(char caracter){
+        try{
+            Integer.parseInt(String.valueOf(caracter));
+            return "Esto no es una letra!!"; // si lo es no manda un true
+        } catch (NumberFormatException e){
+            return null;// si no lo es lo agarra el exception y nos manda false
+        }
+    }
+}
