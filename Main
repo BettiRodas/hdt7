@@ -1,0 +1,30 @@
+/*Universidad del Valle de Guatemala
+Hoja de trabajo #7
+Michelle Bartra - 14
+Betti Rodas - 14204
+*/
+
+import.java.util.*;
+
+public class Main{
+	public static void main(String[] args){
+		Scanner teclado = new Scanner (System.in);
+        System.out.println("Bienvenido! ¿Que quiere hacer?");//se da la bienvenida
+        System.out.println("1. codificar");											//opcion1
+        System.out.println("2. decodificar");											//opcion2
+        int opcion=teclado.nextInt(); 
+
+	    if (opcion==1){
+	    	Codificar codigo= new Codificar();
+	    	System.out.println("Ingrese el mensaje");
+	    	String mensaje=teclado.next();
+	    	codigo.separoLetras(mensaje);
+	    }
+	    if (opcion==2){
+	    	Decodificar decodigo= new Decodificar();
+	    	System.out.println("Ingrese el codigo");
+	    	String codigo=teclado.next();
+	    }
+		
+
+}
