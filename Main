@@ -15,11 +15,14 @@ public class Main{
         int opcion=teclado.nextInt(); 
 
 	    if (opcion==1){
-	    	Codificar codigo= new Codificar();
+	    Codificar codigo= new Codificar();
 	    	System.out.println("Ingrese el mensaje");
 	    	String mensaje=teclado.next();
-	    	codigo.separoLetras(mensaje);
-	    }
+                while  ("Esto no es una letra!!, vuelva a ingresar un mensaje sin numeros".equals(codigo.separoLetras(mensaje))){
+                System.out.println(codigo.separoLetras(mensaje));
+                System.out.println("Intente de nuevo");
+                mensaje= teclado.next();
+  } }
 	    if (opcion==2){
 	    	Decodificar decodigo= new Decodificar();
 	    	System.out.println("Ingrese el codigo");
