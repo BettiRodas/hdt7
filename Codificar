@@ -1,16 +1,28 @@
 import java.util.Set;
 
 public  class Codificar{
-	public  void separoLetras(String mensaje){
-		
-
+	 private ArrayList <Object> entrada =  new ArrayList();
+    int n=0;
+	
+    public  String separoLetras(String mensaje){
+        for (int i=0; i< mensaje.length(); i++){
+            char caracter = mensaje.charAt(i); 
+             n= n+ PruebaisNumber(caracter);}
+             if (n>0){
+                 n=0;
+             return "Esto no es una letra!!, vuelva a ingresar un mensaje sin numeros";
+             }
+             else{
+                 n=0;
+             return "Procesaremos su mensaje";}
 	}
-	 private static String PruebaisNumber(char caracter){
-        try{
+        
+        private static int PruebaisNumber(char caracter){
+            try{
             Integer.parseInt(String.valueOf(caracter));
-            return "Esto no es una letra!!"; // si lo es no manda un true
+            return 1; // si lo es no manda un true
         } catch (NumberFormatException e){
-            return null;// si no lo es lo agarra el exception y nos manda false
+            return 0;// si no lo es lo agarra el exception y nos manda false
         }
     }
 }
