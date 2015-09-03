@@ -1,4 +1,5 @@
 import java.util.Set;
+import java.util.ArrayList;
 
 public  class Codificar{
 	 private ArrayList <Object> entrada =  new ArrayList();
