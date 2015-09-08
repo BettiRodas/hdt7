@@ -45,16 +45,13 @@ public  class Codificar{
         assert arbol != null;
         if (arbol instanceof Leaf) {
             Leaf leaf = (Leaf)arbol;
-            // print out character, frecuencia, and code for this leaf (which is just the prefix)
             System.out.println(leaf.value + "       \t" + leaf.frecuencia + "       \t" + pre);
               
         } else if (arbol instanceof Nodo) {
             Nodo node = (Nodo)arbol;
-            // traverse left
             pre.append('0');
             printCodes(node.left, pre);
             pre.deleteCharAt(pre.length()-1);
-            // traverse right
             pre.append('1');
             printCodes(node.right, pre);
             pre.deleteCharAt(pre.length()-1);
