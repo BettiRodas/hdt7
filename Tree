@@ -1,0 +1,29 @@
+import java.util.*;
+ 
+abstract class Tree implements Comparable<Tree> {
+    public final int frecuencia; 
+    public Tree(int fre) { frecuencia = fre; }
+ 
+    public int compareTo(Tree tree) {
+        return frecuencia - tree.frecuencia;
+    }
+}
+ 
+class Leaf extends Tree {
+    public final char value; 
+ 
+    public Leaf(int fre, char val) {
+        super(fre);
+        value = val;
+    }
+}
+ 
+class Nodo extends Tree {
+    public final Tree left, right; // subtrees
+ 
+    public Nodo(Tree l, Tree r) {
+        super(l.frecuencia + r.frecuencia);
+        left = l;
+        right = r;
+    }
+}
