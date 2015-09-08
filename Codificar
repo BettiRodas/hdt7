@@ -1,8 +1,9 @@
-import java.util.Set;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 public  class Codificar{
-	 private ArrayList <Object> entrada =  new ArrayList();
+    private ArrayList <Object> entrada =  new ArrayList();
     int n=0;
 	
     public  String separoLetras(String mensaje){
@@ -26,4 +27,39 @@ public  class Codificar{
             return 0;// si no lo es lo agarra el exception y nos manda false
         }
     }
+
+    public Tree ArmoArbol(int[] frecuenciadeCr){
+    PriorityQueue<Tree> arboles = new PriorityQueue<Tree>();
+        for (int i = 0; i < frecuenciadeCr.length; i++)
+            if (frecuenciadeCr[i] > 0)
+                arboles.offer(new Leaf(frecuenciadeCr[i], (char)i));
+        assert arboles.size() > 0;
+        while (arboles.size() > 1) {
+            Tree a = arboles.poll();
+            Tree b = arboles.poll();
+            arboles.offer(new Nodo(a, b));
+        }
+        return arboles.poll();}
+    
+    public void printCodes(Tree arbol, StringBuffer pre) {
+        assert arbol != null;
+        if (arbol instanceof Leaf) {
+            Leaf leaf = (Leaf)arbol;
+            // print out character, frecuencia, and code for this leaf (which is just the prefix)
+            System.out.println(leaf.value + "       \t" + leaf.frecuencia + "       \t" + pre);
+              
+        } else if (arbol instanceof Nodo) {
+            Nodo node = (Nodo)arbol;
+            // traverse left
+            pre.append('0');
+            printCodes(node.left, pre);
+            pre.deleteCharAt(pre.length()-1);
+            // traverse right
+            pre.append('1');
+            printCodes(node.right, pre);
+            pre.deleteCharAt(pre.length()-1);
+        }
+    }
+    
 }
+
