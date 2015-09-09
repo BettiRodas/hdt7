@@ -4,30 +4,55 @@ Michelle Bartra - 14
 Betti Rodas - 14204
 */
 
-import.java.util.*;
+import java.util.Scanner;
 
-public class Main{
+public class main{
 	public static void main(String[] args){
 		Scanner teclado = new Scanner (System.in);
+                Codigos hola=new Codigos();
         System.out.println("Bienvenido! ¿Que quiere hacer?");//se da la bienvenida
         System.out.println("1. codificar");											//opcion1
         System.out.println("2. decodificar");											//opcion2
         int opcion=teclado.nextInt(); 
 
 	    if (opcion==1){
-	    Codificar codigo= new Codificar();
+	    	Codificar codigo= new Codificar();
 	    	System.out.println("Ingrese el mensaje");
 	    	String mensaje=teclado.next();
                 while  ("Esto no es una letra!!, vuelva a ingresar un mensaje sin numeros".equals(codigo.separoLetras(mensaje))){
                 System.out.println(codigo.separoLetras(mensaje));
                 System.out.println("Intente de nuevo");
                 mensaje= teclado.next();
-  } }
-	    if (opcion==2){
+             
+                     } 
+                     //for (int j=0; j<10;j++){
+                     //System.out.println(hola.getTodos(0, j));
+                     //System.out.println(hola.getTodos(1, j));
+                     //}
+                 int[] frecuenciadeCr = new int[200];
+                 for (char c : mensaje.toCharArray())
+                    frecuenciadeCr[c]++;
+                    Tree tree = codigo.ArmoArbol(frecuenciadeCr);
+                    System.out.println("Letra\tFrecuencia\tCódigo");
+                    codigo.printCodes(tree, new StringBuffer());
+                    }
+                    
+          
+            
+	   
+            if (opcion==2){
 	    	Decodificar decodigo= new Decodificar();
 	    	System.out.println("Ingrese el codigo");
 	    	String codigo=teclado.next();
+                while  ("El codigo no puede tener letras y solo puede ser 1 o 0".equals(decodigo.veoCodigo(codigo))){
+                System.out.println(decodigo.veoCodigo(codigo));
+                System.out.println("Intente de nuevo");
+                codigo= teclado.next();
 	    }
+                String defaults="110 01 011";
+                decodigo.Stuff();
+                
+            }
 		
 
 }
