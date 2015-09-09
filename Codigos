@@ -1,0 +1,21 @@
+//Univerisisdad del valle de guatemala
+//Michelle Bartra 14384
+//Betti Rodas 14204
+
+public class Codigos {
+    String[][] todos = new String[2][26];
+    public void setTodos(char a, String b, int j){
+        String c="";
+        c=c+a;
+     todos[0][j]= c;
+     todos[1][j]=b;
+    }
+    public String getTodos(int i, int j){
+    return todos[i][j];
+    }
+
+    void setTodos(char a, String b, int i, int j) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}
