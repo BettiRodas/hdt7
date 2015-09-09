@@ -22,8 +22,15 @@ public class Decodificar {
             else{ return 1;}
         } catch (NumberFormatException e){
             return 1;// si no lo es lo agarra el exception y nos manda false
-        }
-    }
+        }}
+            public void Stuff(){
+            System.out.println("aho");
+            }
+    
+  
+              
+        
+}
   
               
         
