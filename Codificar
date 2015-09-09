@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Set;
-
+/*Universidad del Valle de Guatemala
+Hoja de trabajo #7
+Michelle Bartra - 14
+Betti Rodas - 14204
+*/
 public  class Codificar{
     private ArrayList <Object> entrada =  new ArrayList();
     int n=0;
